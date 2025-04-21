@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tutorials - Art Community</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b132b;
+  color: white;
+}
+
+/* Layout */
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1c2541;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar-header {
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.sidebar-nav .nav-button {
+  width: 100%;
+  background: none;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.sidebar-nav .nav-button:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.sidebar-nav .active {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.sidebar-nav .logout:hover {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  padding: 40px;
+  width: 100%;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+}
+
+.header p {
+  color: rgba(0, 255, 255, 0.6);
+}
+
+/* Tutorial Button */
+.upload-button {
+  background-color: #00bfa6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.upload-button:hover {
+  background-color: #252e3b;
+}
+
+/* Tutorials Grid */
+.tutorials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Tutorial Card */
+.tutorial-card {
+  background-color: #1c2541;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.tutorial-card:hover {
+  box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.3);
+}
+
+.tutorial-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tutorial-info {
+  padding: 15px;
+}
+
+.tutorial-info h3 {
+  margin-bottom: 5px;
+}
+
+.category {
+  color: #00bfa6;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.tutorial-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(0, 255, 255, 0.6);
+}
+
+.fee {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Paid Tutorial */
+.paid-tutorial {
+  background-color: #252e3b;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.paid-tutorial .fee {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+</style>
+<body>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Art Community</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-button" onclick="location.href='dashboard.html'">Dashboard</button>
+        <button class="nav-button">My Artworks</button>
+        <button class="nav-button active">Tutorials</button>
+        <button class="nav-button">Favorites</button>
+        <button class="nav-button">Badges</button>
+        <button class="nav-button logout" onclick="logout()">Logout</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div>
+          <h1>Tutorials</h1>
+          <p>Learn new skills with our free and paid tutorials</p>
+        </div>
+        <button class="upload-button">Add New Tutorial</button>
+      </div>
+
+      <!-- Tutorials Grid -->
+      <div class="tutorials-grid">
+        
+        <!-- Free Tutorial Card -->
+        <div class="tutorial-card">
+          <img src="images/painting_intro.jpg" alt="Introduction to Painting">
+          <div class="tutorial-info">
+            <h3>Introduction to Painting</h3>
+            <p class="category">Painting</p>
+            <p class="description">A beginner-friendly tutorial to get started with painting. Learn basic techniques and tools.</p>
+            <div class="tutorial-meta">
+              <span>Free</span>
+              <div>
+                <span>❤️ 120</span>
+                <span>💬 35</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paid Tutorial Card -->
+        <div class="tutorial-card paid-tutorial">
+          <img src="images/digital_art_advanced.jpg" alt="Advanced Digital Art Techniques">
+          <div class="tutorial-info">
+            <h3>Advanced Digital Art Techniques</h3>
+            <p class="category">Digital Art</p>
+            <p class="description">A comprehensive guide to mastering digital art, including advanced tools and techniques.</p>
+            <div class="tutorial-meta">
+              <span class="fee">$49.99</span>
+              <div>
+                <span>❤️ 80</span>
+                <span>💬 20</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Free Tutorial Card -->
+        <div class="tutorial-card">
+          <img src="images/sketching_for_beginners.jpg" alt="Sketching for Beginners">
+          <div class="tutorial-info">
+            <h3>Sketching for Beginners</h3>
+            <p class="category">Sketching</p>
+            <p class="description">Learn the fundamentals of sketching, including lines, shapes, and shading techniques.</p>
+            <div class="tutorial-meta">
+              <span>Free</span>
+              <div>
+                <span>❤️ 95</span>
+                <span>💬 50</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paid Tutorial Card -->
+        <div class="tutorial-card paid-tutorial">
+          <img src="images/mastering_watercolors.jpg" alt="Mastering Watercolors">
+          <div class="tutorial-info">
+            <h3>Mastering Watercolors</h3>
+            <p class="category">Watercolor Painting</p>
+            <p class="description">A paid course for mastering the art of watercolor painting, from basics to advanced techniques.</p>
+            <div class="tutorial-meta">
+              <span class="fee">$39.99</span>
+              <div>
+                <span>❤️ 60</span>
+                <span>💬 10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

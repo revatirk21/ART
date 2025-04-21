@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#0b132b] text-white scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Literary Dreams</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal {
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans">
+    <nav class="w-full bg-[#1c2541] px-6 py-4 fixed top-0 left-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+          <a href="#" class="text-white text-2xl font-bold">Art Community</a>
+          <div class="space-x-6 hidden md:flex">
+            <a href="/index.html" class="text-white hover:text-white/80 transition">Home</a>
+            </div>
+            </div>
+            </nav>
+  <!-- Hero Section -->
+  <section class="relative h-[60vh] flex items-center justify-center bg-gradient-to-b from-[#1c2541] to-[#0b132b] text-center px-4">
+    <div class="space-y-8">
+      <h1 class="text-5xl md:text-6xl font-bold tracking-tight">Literary Dreams</h1>
+      <p class="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+        Where words dance and stories come alive through the art of writing
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Works -->
+  <section class="max-w-7xl mx-auto px-4 mt-16">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-3xl font-semibold text-white">Featured Works</h2>
+      <button class="flex items-center border border-[#252e3b] text-white hover:bg-[#1c2541] px-4 py-2 rounded-md">
+        <svg class="mr-2 h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M4 19h16M4 15h16M4 11h16M4 7h16" />
+        </svg>
+        View All
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div onclick="openModal('Moonlit Whispers', 'In the silence of night, where shadows dance...', 'Elena Rose')" class="cursor-pointer group relative overflow-hidden rounded-lg bg-[#1c2541] hover:bg-[#252e3b] transition-colors duration-300 p-6">
+        <div class="space-y-3">
+          <div class="flex justify-between items-start">
+            <span class="text-xs font-medium bg-[#252e3b] text-white/80 px-3 py-1 rounded-full">Poetry</span>
+            <div class="flex items-center gap-1 text-white/60">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H5l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg>
+              <span class="text-sm">234</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold group-hover:text-white/90">Moonlit Whispers</h3>
+          <p class="text-white/70 text-sm leading-relaxed">In the silence of night, where shadows dance...</p>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-sm text-white/60">By Elena Rose</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div onclick="openModal('The Last Train Home', 'The station clock struck midnight as memories flooded back...', 'Marcus Chen')" class="cursor-pointer group relative overflow-hidden rounded-lg bg-[#1c2541] hover:bg-[#252e3b] transition-colors duration-300 p-6">
+        <div class="space-y-3">
+          <div class="flex justify-between items-start">
+            <span class="text-xs font-medium bg-[#252e3b] text-white/80 px-3 py-1 rounded-full">Short Story</span>
+            <div class="flex items-center gap-1 text-white/60">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H5l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg>
+              <span class="text-sm">189</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold group-hover:text-white/90">The Last Train Home</h3>
+          <p class="text-white/70 text-sm leading-relaxed">The station clock struck midnight as memories flooded back...</p>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-sm text-white/60">By Marcus Chen</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div onclick="openModal('Autumn Leaves', 'Red and gold paint the sky, as nature bids farewell...', 'Sarah Williams')" class="cursor-pointer group relative overflow-hidden rounded-lg bg-[#1c2541] hover:bg-[#252e3b] transition-colors duration-300 p-6">
+        <div class="space-y-3">
+          <div class="flex justify-between items-start">
+            <span class="text-xs font-medium bg-[#252e3b] text-white/80 px-3 py-1 rounded-full">Poetry</span>
+            <div class="flex items-center gap-1 text-white/60">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H5l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg>
+              <span class="text-sm">156</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold group-hover:text-white/90">Autumn Leaves</h3>
+          <p class="text-white/70 text-sm leading-relaxed">Red and gold paint the sky, as nature bids farewell...</p>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-sm text-white/60">By Sarah Williams</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div onclick="openModal('The Forgotten Garden', 'Behind the iron gates, secrets bloom in silence...', 'James Mitchell')" class="cursor-pointer group relative overflow-hidden rounded-lg bg-[#1c2541] hover:bg-[#252e3b] transition-colors duration-300 p-6">
+        <div class="space-y-3">
+          <div class="flex justify-between items-start">
+            <span class="text-xs font-medium bg-[#252e3b] text-white/80 px-3 py-1 rounded-full">Short Story</span>
+            <div class="flex items-center gap-1 text-white/60">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H5l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg>
+              <span class="text-sm">312</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold group-hover:text-white/90">The Forgotten Garden</h3>
+          <p class="text-white/70 text-sm leading-relaxed">Behind the iron gates, secrets bloom in silence...</p>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-sm text-white/60">By James Mitchell</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div onclick="openModal('City Lights', 'Neon dreams cascade down glass towers...', 'Maya Patel')" class="cursor-pointer group relative overflow-hidden rounded-lg bg-[#1c2541] hover:bg-[#252e3b] transition-colors duration-300 p-6">
+        <div class="space-y-3">
+          <div class="flex justify-between items-start">
+            <span class="text-xs font-medium bg-[#252e3b] text-white/80 px-3 py-1 rounded-full">Poetry</span>
+            <div class="flex items-center gap-1 text-white/60">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H5l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg>
+              <span class="text-sm">278</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold group-hover:text-white/90">City Lights</h3>
+          <p class="text-white/70 text-sm leading-relaxed">Neon dreams cascade down glass towers...</p>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-sm text-white/60">By Maya Patel</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div onclick="openModal('The Blue Hour', 'When day meets night, magic stirs in twilight...', 'Thomas Reed')" class="cursor-pointer group relative overflow-hidden rounded-lg bg-[#1c2541] hover:bg-[#252e3b] transition-colors duration-300 p-6">
+        <div class="space-y-3">
+          <div class="flex justify-between items-start">
+            <span class="text-xs font-medium bg-[#252e3b] text-white/80 px-3 py-1 rounded-full">Short Story</span>
+            <div class="flex items-center gap-1 text-white/60">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H5l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" /></svg>
+              <span class="text-sm">195</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold group-hover:text-white/90">The Blue Hour</h3>
+          <p class="text-white/70 text-sm leading-relaxed">When day meets night, magic stirs in twilight...</p>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-sm text-white/60">By Thomas Reed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
+    <div class="bg-[#1c2541] p-8 rounded-lg w-full max-w-xl text-white relative">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-xl">&times;</button>
+      <h2 id="modal-title" class="text-2xl font-bold mb-4"></h2>
+      <p id="modal-excerpt" class="text-white/80 mb-6 leading-relaxed"></p>
+      <p id="modal-author" class="text-sm text-white/60"></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-20 text-center text-white/80 py-10">
+    <p class="text-sm">Where imagination meets eloquence</p>
+    <p class="text-sm mt-1">A sanctuary for literary artists</p>
+  </footer>
+
+  <!-- Modal Script -->
+  <script>
+    function openModal(title, excerpt, author) {
+      document.getElementById("modal-title").textContent = title;
+      document.getElementById("modal-excerpt").textContent = excerpt;
+      document.getElementById("modal-author").textContent = "By " + author;
+      document.getElementById("modal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("modal").classList.add("hidden");
+    }
+  </script>
+
+</body>
+</html>

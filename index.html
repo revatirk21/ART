@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Art Community</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Art Community</div>
+    <div class="nav-links">
+      <a href="#express-section">Explore</a>
+      <a href="#categories">Categories</a>
+      <a href="#trending-artists">Artworks</a>
+      <a href="#artist-section">Artist</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#about-us">About Us</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Welcome to the Art<br>Community</h1>
+    <p>Share your Paintings, Poetry, and Stories with the World</p>
+
+    <div class="hero-buttons">
+      <button id="cta-btn">JOIN NOW</button> 
+    </div>
+  </section>
+
+  <section class="express-section" id="express-section">
+    <h2>Express Yourself</h2>
+    <p>Discover how our platform helps artists and creators share their passion with the world.</p>
+  
+    <div class="card-container">
+      <div class="card">
+        <div class="icon">
+          🎨
+        </div>
+        <a href="/ArtGallery.html">Showcase Your Art</a>
+        <p>Upload and share your paintings, drawings, and visual creations with a community of fellow artists and enthusiasts.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          📖
+        </div>
+        <h3 class="red">
+          <a href="/Writing.html">Publish Your Writing</a></h3>
+        <p>Share your poetry, short stories, and creative writing with readers who appreciate literary art.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          👥
+        </div>
+        <h3>Connect with Artists</h3>
+        <p>Build relationships with like-minded creators, follow your favorites, and grow your artistic network.</p>
+      </div>
+      <div class="card">
+        <div class="icon">
+          💬
+        </div>
+        <h3>Receive Feedback</h3>
+        <p>Get constructive feedback on your work from a supportive community dedicated to helping you improve.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories" id="categories">
+    <div class="categories-header">
+      <h1>Explore Categories</h1>
+      <p class="subtitle">Discover diverse forms of artistic expression in our community</p>
+    </div>
+   
+
+    <div class="categories-grid">
+      <div class="category-card">
+        <div class="category-icon">🎨</div>
+        <h2>Paintings</h2>
+        <p>Oil,acrylics and watercolor paintings</p>
+        <a href="/va.html">Browse artworks →</a>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">📖</div>
+        <h2>Digital Art</h2>
+        <p>Digital illustrations and designs</p>
+        <a href="#">Browse artworks →</a>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">📷</div>
+        <h2>Drawings</h2>
+        <p>Pencil, charcoal and ink drawings</p>
+        <a href="#">Browse artworks →</a>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">🎵</div>
+        <h2>Illustrations</h2>
+        <p>Hand-drawn and digital illustrations</p>
+        <a href="#">Browse artworks →</a>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">🎬</div>
+        <h2>Sketches</h2>
+        <p>Portraits</p>
+        <a href="#">Browse artworks →</a>
+      </div>
+      <div class="category-card">
+        <div class="category-icon">💻</div>
+        <h2>Digital Art</h2>
+        <p>3D renders, digital paintings, and AI art</p>
+        <a href="#">Browse artworks →</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="trending-artwork" id="trending-artists">
+    <h2 class="section-title">Trending Artwork</h2>
+  
+    <div class="slider-wrapper">
+      <button id="artist-slide-left" class="slide-btn"><</button>
+  
+      <div class="artwork-grid">
+        <div class="art-card">
+          <div class="art-thumbnail">
+            <img src="palette-icon.png" alt="Artwork" />
+          </div>
+          <h3>Summer Dreams</h3>
+          <p>by Elena Rey</p>
+          <div class="art-meta">
+            <span class="tag">Painting</span>
+            <span class="likes">❤️ 256</span>
+          </div>
+        </div>
+  
+        <div class="art-card">
+          <div class="art-thumbnail">
+            <img src="palette-icon.png" alt="Artwork" />
+          </div>
+          <h3>Urban Reflections</h3>
+          <p>by Marcus Chen</p>
+          <div class="art-meta">
+            <span class="tag">Photography</span>
+            <span class="likes">❤️ 189</span>
+          </div>
+        </div>
+  
+        <div class="art-card">
+          <div class="art-thumbnail">
+            <img src="palette-icon.png" alt="Artwork" />
+          </div>
+          <h3>Whispers of Nature</h3>
+          <p>by Olivia Smith</p>
+          <div class="art-meta">
+            <span class="tag">Digital Art</span>
+            <span class="likes">❤️ 324</span>
+          </div>
+        </div>
+  
+        <div class="art-card">
+          <div class="art-thumbnail">
+            <img src="palette-icon.png" alt="Artwork" />
+          </div>
+          <h3>City Lights</h3>
+          <p>by Ethan Lee</p>
+          <div class="art-meta">
+            <span class="tag">Painting</span>
+            <span class="likes">❤️ 412</span>
+          </div>
+        </div>
+  
+        <div class="art-card">
+          <div class="art-thumbnail">
+            <img src="palette-icon.png" alt="Artwork" />
+          </div>
+          <h3>Forest Echoes</h3>
+          <p>by Mia Wong</p>
+          <div class="art-meta">
+            <span class="tag">Photography</span>
+            <span class="likes">❤️ 278</span>
+          </div>
+        </div>
+  
+        <div class="art-card">
+          <div class="art-thumbnail">
+            <img src="palette-icon.png" alt="Artwork" />
+          </div>
+          <h3>Abstract Dreams</h3>
+          <p>by Liam Scott</p>
+          <div class="art-meta">
+            <span class="tag">Digital Art</span>
+            <span class="likes">❤️ 350</span>
+          </div>
+        </div>
+  
+      </div>
+  
+      <button id="artist-slide-right" class="slide-btn">></button>
+    </div>
+  
+    <div class="view-all-container">
+      <button class="view-all-btn">View All Artwork</button>
+    </div>
+  </section>
+  
+  
+  <section class="trending-artists" id="trending-artists">
+    <h2>Trending Artists</h2>
+    <p class="subtitle">Discover talented creators making waves in our community this week</p>
+  
+    <div class="slider-wrapper">
+      <button id="artist-slide-left" class="slide-btn"><</button>
+  
+      <div id="artist-container" class="artists">
+        <div class="artist-card">
+          <div class="avatar"></div>
+          <h3>Elena Rivers</h3>
+          <span class="category">Oil Painting</span>
+          <p class="followers">❤️ 5.2K followers</p>
+        </div>
+        <div class="artist-card">
+          <div class="avatar"></div>
+          <h3>Marcus Chen</h3>
+          <span class="category">Digital Art</span>
+          <p class="followers">❤️ 3.8K followers</p>
+        </div>
+        <div class="artist-card">
+          <div class="avatar"></div>
+          <h3>Sophia Garcia</h3>
+          <span class="category">Watercolor</span>
+          <p class="followers">❤️ 7.1K followers</p>
+        </div>
+        <div class="artist-card">
+          <div class="avatar"></div>
+          <h3>David Kim</h3>
+          <span class="category">Photography</span>
+          <p class="followers">❤️ 4.5K followers</p>
+        </div>
+      </div>
+  
+      <button id="artist-slide-right" class="slide-btn">></button>
+    </div>
+  
+    <a href="#" class="discover-more">Discover more artists →</a>
+  </section>
+  
+  
+  <section class="testimonials" id="testimonials">
+    <h2>What Our Artists Say</h2>
+    <p class="subtitle">Hear from members of our community about their experiences.</p>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"Being part of this community has transformed my artistic journey. The feedback I’ve received has helped me grow, and I’ve connected with so many talented artists worldwide."</p>
+      <div class="user-info">
+        <div class="user-avatar">S</div>
+        <div>
+          <p class="user-name">Sarah Johnson</p>
+          <p class="user-role">Digital Artist</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★</div>
+      <p class="quote">"Being part of this community has transformed my artistic journey. The feedback I’ve received has helped me grow, and I’ve connected with so many talented artists worldwide."</p>
+      <div class="user-info">
+        <div class="user-avatar">S</div>
+        <div>
+          <p class="user-name">Sarah Johnson</p>
+          <p class="user-role">Digital Artist</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"Being part of this community has transformed my artistic journey. The feedback I’ve received has helped me grow, and I’ve connected with so many talented artists worldwide."</p>
+      <div class="user-info">
+        <div class="user-avatar">S</div>
+        <div>
+          <p class="user-name">Sarah Johnson</p>
+          <p class="user-role">Digital Artist</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="newsletter-content">
+      <h2>Stay Inspired</h2>
+      <p>Subscribe to our newsletter for weekly featured artworks, community highlights, and creative inspiration.</p>
+    </div>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Your email address" />
+      <button>Subscribe</button>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- About Section -->
+      <div class="footer-column">
+        <h3>Art Community</h3>
+        <p>
+          A place for artists and art enthusiasts to share, discover, and connect
+          through creative expression.
+        </p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+  
+      <!-- Explore -->
+      <div class="footer-column">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Recent Uploads</a></li>
+          <li><a href="#">Featured Artists</a></li>
+        </ul>
+      </div>
+  
+      <!-- Community -->
+      <div class="footer-column">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="#">Guidelines</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Forums</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+  
+      <!-- Legal -->
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Copyright</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>© Art Community. All rights reserved.</p>
+    </div>
+  </footer>
+  
+ <!-- Trigger buttons -->
+ <div class="modal">
+  <div class="modal-content">
+    <button class="close-btn">&times;</button>
+
+    <h2 class="title">Welcome Back</h2>
+
+    <div class="tabs">
+      <button class="tab active" id="login-tab">Login</button>
+      <button class="tab" id="signup-tab">Sign Up</button>
+    </div>
+
+    <!-- Login Form -->
+    <form class="form" id="login-form">
+      <label for="email">Email</label>
+      <div class="input-wrapper">
+        <input type="email" id="email" placeholder="email@example.com" required>
+      </div>
+
+      <label for="password">Password</label>
+      <div class="input-wrapper">
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <form class="form" id="signup-form" style="display: none;">
+      <!-- Name -->
+      <label for="signup-name">Name</label>
+      <div class="input-wrapper">
+        <input type="text" id="signup-name" placeholder="Enter your name" required>
+      </div>
+
+      <!-- Email -->
+      <label for="signup-email">Email</label>
+      <div class="input-wrapper">
+        <input type="email" id="signup-email" placeholder="email@example.com" required>
+      </div>
+
+      <!-- Password -->
+      <label for="signup-password">Password</label>
+      <div class="input-wrapper">
+        <input type="password" id="signup-password" placeholder="Create password" required>
+      </div>
+
+      <!-- Confirm Password -->
+      <label for="signup-confirm-password">Confirm Password</label>
+      <div class="input-wrapper">
+        <input type="password" id="signup-confirm-password" placeholder="Confirm password" required>
+      </div>
+
+      <button type="submit" class="login-btn">Sign Up</button>
+    </form>
+
+    <!-- Text below forms -->
+    <p class="signup-text" id="bottom-text">
+      Don't have an account? <a href="#" id="switch-to-signup">Sign up</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

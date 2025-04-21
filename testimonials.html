@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Artist Feedback - Art Community</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fonts and Background */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b132b;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #1c2541;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+    }
+
+    .sidebar-header {
+      margin-bottom: 40px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .sidebar-nav .nav-button {
+      width: 100%;
+      background: none;
+      color: white;
+      padding: 10px;
+      text-align: left;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: background 0.3s;
+    }
+
+    .sidebar-nav .nav-button:hover {
+      background: rgba(0, 255, 255, 0.2);
+    }
+
+    .sidebar-nav .active {
+      background: rgba(0, 255, 255, 0.2);
+    }
+
+    .sidebar-nav .logout:hover {
+      background: rgba(255, 0, 0, 0.2);
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 250px;
+      padding: 40px;
+      width: 100%;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+    }
+
+    .header p {
+      color: rgba(0, 255, 255, 0.6);
+    }
+
+    /* Feedback Cards */
+    .feedback-card {
+      background-color: #1c2541;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 10px;
+      width: 80%;
+      max-width: 600px;
+      color: white;
+    }
+
+    .feedback-author {
+      font-size: 16px;
+      color: #00bfa6;
+      font-weight: bold;
+    }
+
+    .feedback-text {
+      margin: 10px 0;
+    }
+
+    /* Rating System */
+    .star-rating {
+      display: flex;
+      color: #ffcc00;
+    }
+
+    .star {
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .star.selected {
+      color: #ffcc00;
+    }
+
+    /* Like/Dislike Buttons */
+    .like-dislike {
+      margin-top: 10px;
+    }
+
+    .like, .dislike {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    .like:hover, .dislike:hover {
+      color: #00bfa6;
+    }
+
+    /* Add New Feedback Form */
+    .add-feedback-form {
+      background-color: #1c2541;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 20px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .add-feedback-form input, .add-feedback-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      background-color: #0b132b;
+      color: white;
+    }
+
+    .add-feedback-form button {
+      background-color: #00bfa6;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      width: 180px;
+    }
+
+    .add-feedback-form button:hover {
+      background-color: #252e3b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Art Community</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-button" onclick="location.href='dashboard.html'">Dashboard</button>
+        <button class="nav-button" onclick="location.href='my-artworks.html'">My Artworks</button>
+        <button class="nav-button" onclick="location.href='favorites.html'">Favorites</button>
+        <button class="nav-button" onclick="location.href='tutorials.html'">Tutorials</button>
+        <button class="nav-button" onclick="location.href='badges.html'">Badges</button>
+        <button class="nav-button active">Feedback</button>
+        <button class="nav-button logout" onclick="logout()">Logout</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div>
+          <h1>Artist Feedback</h1>
+          <p>Read feedback from fellow artists and share your thoughts!</p>
+        </div>
+      </div>
+
+      <!-- Display Feedback Cards -->
+      <div class="feedback-card">
+        <div class="feedback-author">
+          <a href="#" style="text-decoration: none; color: #00bfa6;">Emily_ArtLover</a>
+        </div>
+        <div class="feedback-text">
+          "Your colors are so vibrant! I love the energy in your artwork. Keep it up!"
+        </div>
+
+        <!-- Star Rating -->
+        <div class="star-rating">
+          <span class="star" onclick="rateFeedback(this)">&#9733;</span>
+          <span class="star" onclick="rateFeedback(this)">&#9733;</span>
+          <span class="star" onclick="rateFeedback(this)">&#9733;</span>
+          <span class="star" onclick="rateFeedback(this)">&#9734;</span>
+          <span class="star" onclick="rateFeedback(this)">&#9734;</span>
+        </div>
+
+        <!-- Like/Dislike Buttons -->
+        <div class="like-dislike">
+          <button class="like" onclick="likeFeedback()">👍 Like</button>
+          <button class="dislike" onclick="dislikeFeedback()">👎 Dislike</button>
+        </div>
+      </div>
+
+      <!-- Another Feedback Card -->
+      <div class="feedback-card">
+        <div class="feedback-author">
+          <a href="#" style="text-decoration: none; color: #00bfa6;">John_Artist</a>
+        </div>
+        <div class="feedback-text">
+          "The sketching techniques you used are impressive! The details are just fantastic."
+        </div>
+
+        <!-- Star Rating -->
+        <div class="star-rating">
+          <span class="star" onclick="rateFeedback(this)">&#9733;</span>
+          <span class="star" onclick="rateFeedback(this)">&#9733;</span>
+          <span class="star" onclick="rateFeedback(this)">&#9733;</span>
+          <span class="star" onclick="rateFeedback(this)">&#9733;</span>
+          <span class="star" onclick="rateFeedback(this)">&#9734;</span>
+        </div>
+
+        <!-- Like/Dislike Buttons -->
+        <div class="like-dislike">
+          <button class="like" onclick="likeFeedback()">👍 Like</button>
+          <button class="dislike" onclick="dislikeFeedback()">👎 Dislike</button>
+        </div>
+      </div>
+
+      <!-- Add New Feedback Form (Moved to Bottom) -->
+      <div class="add-feedback-form">
+        <h2>Add New Feedback</h2>
+        <form id="feedback-form">
+          <textarea placeholder="Enter your feedback..." required></textarea>
+          <button type="submit">Submit Feedback</button>
+        </form>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    // Handle Feedback Rating
+    function rateFeedback(star) {
+      let stars = star.parentNode.querySelectorAll('.star');
+      let index = Array.from(stars).indexOf(star);
+      stars.forEach((s, i) => {
+        if (i <= index) {
+          s.classList.add('selected');
+        } else {
+          s.classList.remove('selected');
+        }
+      });
+    }
+
+    // Handle Like and Dislike buttons
+    function likeFeedback() {
+      alert('You liked this feedback!');
+    }
+
+    function dislikeFeedback() {
+      alert('You disliked this feedback!');
+    }
+
+    // Handle Feedback Form Submission
+    const feedbackForm = document.getElementById('feedback-form');
+    feedbackForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newFeedbackText = e.target.querySelector('textarea').value;
+      if (newFeedbackText) {
+        alert('Thank you for your feedback!');
+        // Logic to submit feedback to server/database can go here
+        feedbackForm.reset();
+      }
+    });
+
+    // Logout function
+    function logout() {
+      // Add your logout functionality
+      alert("Logged out!");
+    }
+  </script>
+
+</body>
+</html>

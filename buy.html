@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy & Sell - Art Community</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+/* Keep the same styles (copy your previous <style> block if needed) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b132b;
+  color: white;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #1c2541;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar-header {
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.sidebar-nav .nav-button {
+  width: 100%;
+  background: none;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.sidebar-nav .nav-button:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.sidebar-nav .active {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.sidebar-nav .logout:hover {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 40px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+}
+
+.header p {
+  color: rgba(0, 255, 255, 0.6);
+}
+
+.upload-button {
+  background-color: #00bfa6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.upload-button:hover {
+  background-color: #252e3b;
+}
+
+.artworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.artwork-card {
+  background-color: #1c2541;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.artwork-card:hover {
+  box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.3);
+}
+
+.artwork-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.artwork-card:hover img {
+  transform: scale(1.05);
+}
+
+.artwork-info {
+  padding: 15px;
+}
+
+.artwork-info h3 {
+  margin-bottom: 5px;
+}
+
+.price {
+  color: #00bfa6;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.buy-button {
+  background-color: #00bfa6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.buy-button:hover {
+  background-color: #252e3b;
+}
+</style>
+
+<body>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Art Community</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-button" onclick="location.href='dashboard.html'">Dashboard</button>
+        <button class="nav-button" onclick="location.href='myartworks.html'">My Artworks</button>
+        <button class="nav-button" onclick="location.href='favorites.html'">Favorites</button>
+        <button class="nav-button" onclick="location.href='tutorials.html'">Tutorials</button>
+        <button class="nav-button" onclick="location.href='badges.html'">Badges</button>
+        <button class="nav-button active">Buy & Sell</button>
+        <button class="nav-button logout" onclick="logout()">Logout</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div>
+          <h1>Buy & Sell Artworks</h1>
+          <p>Explore and own beautiful artworks</p>
+        </div>
+      </div>
+
+      <!-- Artworks Grid -->
+      <div class="artworks-grid">
+        <div class="artwork-card">
+          <div class="artwork-image">
+            <img src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f6d0" alt="Abstract Colors">
+          </div>
+          <div class="artwork-info">
+            <h3>Abstract Colors</h3>
+            <p class="price">$150</p>
+            <p class="description">Vibrant abstract painting using acrylics</p>
+            <button class="buy-button">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="artwork-card">
+          <div class="artwork-image">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9" alt="Forest Path">
+          </div>
+          <div class="artwork-info">
+            <h3>Forest Path</h3>
+            <p class="price">$200</p>
+            <p class="description">Oil painting capturing a serene forest trail</p>
+            <button class="buy-button">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="artwork-card">
+          <div class="artwork-image">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4" alt="Minimalist Sketch">
+          </div>
+          <div class="artwork-info">
+            <h3>Minimalist Sketch</h3>
+            <p class="price">$80</p>
+            <p class="description">Simple yet powerful pencil sketches</p>
+            <button class="buy-button">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

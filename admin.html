@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Art Community</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0b132b, #1c2541);
+      color: white;
+      overflow-x: hidden;
+      transition: background 0.3s;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #1c2541;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar-header {
+      margin-bottom: 40px;
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: #00bfa6;
+    }
+
+    .sidebar-nav .nav-button {
+      width: 100%;
+      background: none;
+      color: white;
+      padding: 10px;
+      text-align: left;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: background 0.3s ease-in-out;
+      border-radius: 6px;
+    }
+
+    .sidebar-nav .nav-button:hover {
+      background: rgba(0, 255, 255, 0.2);
+    }
+
+    .sidebar-nav .active {
+      background: rgba(0, 255, 255, 0.3);
+    }
+
+    .sidebar-nav .logout:hover {
+      background: rgba(255, 0, 0, 0.2);
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 250px;
+      padding: 40px;
+      width: 100%;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: 40px;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      color: rgba(0, 255, 255, 0.6);
+      font-size: 18px;
+    }
+
+    /* Profile Info */
+    .profile-card {
+      background-color: #1c2541;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .profile-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+      border: 3px solid #00bfa6;
+    }
+
+    .profile-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-details h2 {
+      margin-bottom: 5px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .profile-details p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+    }
+
+    .profile-card:hover {
+      transform: scale(1.03);
+      background-color: rgba(0, 255, 255, 0.1);
+    }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .stat-card {
+      background-color: #1c2541;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      transition: transform 0.3s ease-out;
+    }
+
+    .stat-card:hover {
+      transform: scale(1.05);
+      background-color: rgba(0, 255, 255, 0.1);
+    }
+
+    .stat-card h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #00bfa6;
+    }
+
+    .stat-card p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Latest Activity */
+    .activity-section {
+      background-color: #1c2541;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+      animation: fadeIn 2.5s ease-out;
+    }
+
+    .activity-section h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .activity-list {
+      list-style: none;
+    }
+
+    .activity-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Quick Links */
+    .quick-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .quick-links button {
+      background-color: #00bfa6;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .quick-links button:hover {
+      background-color: #252e3b;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Art Community</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-button active">Dashboard</button>
+      <button class="nav-button" onclick="location.href='my-artworks.html'">My Artworks</button>
+      <button class="nav-button" onclick="location.href='contests.html'">Contests</button>
+      <button class="nav-button" onclick="location.href='tutorials.html'">Tutorials</button>
+      <button class="nav-button" onclick="location.href='profile.html'">Profile</button>
+      <button class="nav-button logout">Logout</button>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="header">
+      <h1>Welcome back, Alex!</h1>
+      <p>Your creative journey continues 🌟</p>
+    </div>
+
+    <!-- Profile Info -->
+    <div class="profile-card">
+      <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Profile Picture">
+      <div class="profile-details">
+        <h2>Alex Johnson</h2>
+        <p>alex.johnson@example.com</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>12</h3>
+        <p>Artworks</p>
+      </div>
+      <div class="stat-card">
+        <h3>5</h3>
+        <p>Contests Joined</p>
+      </div>
+      <div class="stat-card">
+        <h3>34</h3>
+        <p>Favorites</p>
+      </div>
+      <div class="stat-card">
+        <h3>8</h3>
+        <p>Badges</p>
+      </div>
+    </div>
+
+    <!-- Latest Activity -->
+    <div class="activity-section">
+      <h2>Latest Activity</h2>
+      <ul class="activity-list">
+        <li>Uploaded "Sunset Dreams" - 2 days ago</li>
+        <li>Joined "Spring Art Contest" - 5 days ago</li>
+        <li>Earned "Top Artist" badge - 1 week ago</li>
+      </ul>
+
+      <!-- Quick Links -->
+      <div class="quick-links">
+        <button onclick="location.href='upload-artwork.html'">Upload Artwork</button>
+        <button onclick="location.href='profile.html'">Edit Profile</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

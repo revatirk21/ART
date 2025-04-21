@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#0b132b] text-white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Art Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="w-full bg-[#1c2541]/90 backdrop-blur-md shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+    <div class="text-2xl font-bold tracking-wide">My Artworks</div>
+    <div class="space-x-6 text-sm md:text-base">
+      <a href="index.html" class="hover:underline hover:text-cyan-400 transition">Home</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative h-[70vh] flex flex-col justify-center items-center bg-gradient-to-b from-[#1c2541] to-[#0b132b] text-center px-4">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-4">Welcome to My Gallery</h1>
+    <p class="text-lg md:text-2xl text-white/80 max-w-2xl">Dive into a collection of my finest paintings and artworks ✨</p>
+  </section>
+
+  <!-- Gallery -->
+  <main class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-4xl font-bold mb-10 text-center">Featured Artworks</h2>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Artwork Card -->
+      <div class="group rounded-xl overflow-hidden bg-[#1c2541]/80 backdrop-blur-md shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22" alt="Artwork 1" class="object-cover w-full h-64 group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-4">
+          <h3 class="text-2xl font-semibold mb-2">Abstract Harmony</h3>
+          <p class="text-white/70 text-sm">By Your Name</p>
+        </div>
+      </div>
+
+      <!-- Copy more cards like this -->
+      <div class="group rounded-xl overflow-hidden bg-[#1c2541]/80 backdrop-blur-md shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b" alt="Artwork 2" class="object-cover w-full h-64 group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-4">
+          <h3 class="text-2xl font-semibold mb-2">Urban Dreams</h3>
+          <p class="text-white/70 text-sm">By Your Name</p>
+        </div>
+      </div>
+
+      <div class="group rounded-xl overflow-hidden bg-[#1c2541]/80 backdrop-blur-md shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb" alt="Artwork 3" class="object-cover w-full h-64 group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="p-4">
+          <h3 class="text-2xl font-semibold mb-2">Nature's Canvas</h3>
+          <p class="text-white/70 text-sm">By Your Name</p>
+        </div>
+      </div>
+
+      <!-- More artworks below -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-white/60">
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+
+</body>
+</html>

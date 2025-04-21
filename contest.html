@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contests - Art Community</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b132b;
+  color: white;
+}
+
+/* Layout */
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1c2541;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar-header {
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.sidebar-nav .nav-button {
+  width: 100%;
+  background: none;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.sidebar-nav .nav-button:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.sidebar-nav .active {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.sidebar-nav .logout:hover {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  padding: 40px;
+  width: 100%;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+}
+
+.header p {
+  color: rgba(0, 255, 255, 0.6);
+}
+
+/* Winners Section */
+.winners-section {
+  margin-bottom: 50px;
+}
+
+.winners-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.winners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.winner-card {
+  background-color: #1c2541;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.winner-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.winner-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.winner-info h3 {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+/* Contest Artworks Grid */
+.artworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Artwork Card */
+.artwork-card {
+  background-color: #1c2541;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.artwork-card:hover {
+  box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.3);
+}
+
+.artwork-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.artwork-card:hover img {
+  transform: scale(1.05);
+}
+
+.artwork-info {
+  padding: 15px;
+}
+
+.artwork-info h3 {
+  margin-bottom: 5px;
+}
+
+.category {
+  color: #00bfa6;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.vote-button {
+  margin-top: 10px;
+  background-color: #00bfa6;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+}
+
+.vote-button:hover {
+  background-color: #252e3b;
+}
+</style>
+
+<body>
+
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Art Community</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-button" onclick="location.href='dashboard.html'">Dashboard</button>
+      <button class="nav-button">My Artworks</button>
+      <button class="nav-button">Favorites</button>
+      <button class="nav-button">Tutorials</button>
+      <button class="nav-button active">Contests</button>
+      <button class="nav-button">Badges</button>
+      <button class="nav-button logout" onclick="logout()">Logout</button>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="header">
+      <div>
+        <h1>Contests</h1>
+        <p>Vote for your favorite artworks & check previous winners</p>
+      </div>
+    </div>
+
+    <!-- Previous Winners Section -->
+    <section class="winners-section">
+      <h2>Previous Winners</h2>
+      <div class="winners-grid">
+        <div class="winner-card">
+          <img src="https://images.unsplash.com/photo-1587613990619-9470e738b0ad" alt="Winner 1">
+          <div class="winner-info">
+            <h3>Dreamy Forest</h3>
+            <p>March 2024 Contest</p>
+          </div>
+        </div>
+
+        <div class="winner-card">
+          <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde" alt="Winner 2">
+          <div class="winner-info">
+            <h3>Urban Symphony</h3>
+            <p>February 2024 Contest</p>
+          </div>
+        </div>
+
+        <div class="winner-card">
+          <img src="https://images.unsplash.com/photo-1532634896-26909d0d4b55" alt="Winner 3">
+          <div class="winner-info">
+            <h3>Golden Hour</h3>
+            <p>January 2024 Contest</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contest Artworks Voting Section -->
+    <div class="artworks-grid">
+      <div class="artwork-card">
+        <div class="artwork-image">
+          <img src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c" alt="Sunset Bliss">
+        </div>
+        <div class="artwork-info">
+          <h3>Sunset Bliss</h3>
+          <p class="category">Painting</p>
+          <button class="vote-button" onclick="voteArtwork('Sunset Bliss')">Vote</button>
+        </div>
+      </div>
+
+      <div class="artwork-card">
+        <div class="artwork-image">
+          <img src="https://images.unsplash.com/photo-1495562569060-2eec283d3391" alt="Mystic River">
+        </div>
+        <div class="artwork-info">
+          <h3>Mystic River</h3>
+          <p class="category">Watercolor</p>
+          <button class="vote-button" onclick="voteArtwork('Mystic River')">Vote</button>
+        </div>
+      </div>
+
+      <div class="artwork-card">
+        <div class="artwork-image">
+          <img src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c" alt="Digital Mirage">
+        </div>
+        <div class="artwork-info">
+          <h3>Digital Mirage</h3>
+          <p class="category">Digital Art</p>
+          <button class="vote-button" onclick="voteArtwork('Digital Mirage')">Vote</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+    function logout() {
+      alert("Logged out!");
+    }
+    
+    function voteArtwork(title) {
+      alert("You voted for " + title + "! 🎨");
+      
+      // Disable the clicked button
+      const button = event.target;
+      button.disabled = true;
+      button.innerText = "Voted ✅";
+      button.style.backgroundColor = "#555"; 
+      button.style.cursor = "not-allowed";
+    }
+    </script>
+    
+
+</body>
+</html>

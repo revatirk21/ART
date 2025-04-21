@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Artworks - Art Community</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b132b;
+  color: white;
+}
+
+/* Layout */
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1c2541;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar-header {
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.sidebar-nav .nav-button {
+  width: 100%;
+  background: none;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.sidebar-nav .nav-button:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.sidebar-nav .active {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.sidebar-nav .logout:hover {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  padding: 40px;
+  width: 100%;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+}
+
+.header p {
+  color: rgba(0, 255, 255, 0.6);
+}
+
+/* Upload Button */
+.upload-button {
+  background-color: #00bfa6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.upload-button:hover {
+  background-color: #252e3b;
+}
+
+/* Artworks Grid */
+.artworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Artwork Card */
+.artwork-card {
+  background-color: #1c2541;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.artwork-card:hover {
+  box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.3);
+}
+
+.artwork-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.artwork-card:hover img {
+  transform: scale(1.05);
+}
+
+.artwork-info {
+  padding: 15px;
+}
+
+.artwork-info h3 {
+  margin-bottom: 5px;
+}
+
+.category {
+  color: #00bfa6;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.artwork-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(0, 255, 255, 0.6);
+}
+
+/* Upload Dialog */
+.upload-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-content {
+  background-color: #1c2541;
+  padding: 30px;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.dialog-content h2 {
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.dialog-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-content form input,
+.dialog-content form textarea {
+  background-color: #0b132b;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  color: white;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.dialog-content .cancel-button {
+  background: none;
+  color: #00bfa6;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+</style>
+<body>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Art Community</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-button" onclick="location.href='dashboard.html'">Dashboard</button>
+        <button class="nav-button active">My Artworks</button>
+        <button class="nav-button">Favorites</button>
+        <button class="nav-button">Tutorials</button>
+        <button class="nav-button">Badges</button>
+        <button class="nav-button logout" onclick="logout()">Logout</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div>
+          <h1>My Artworks</h1>
+          <p>Manage and organize your artistic creations</p>
+        </div>
+        <button class="upload-button" onclick="openUploadDialog()">Upload New Artwork</button>
+      </div>
+
+      <!-- Artworks Grid -->
+      <div class="artworks-grid">
+        <div class="artwork-card">
+          <div class="artwork-image">
+            <img src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb" alt="Summer Landscape">
+          </div>
+          <div class="artwork-info">
+            <h3>Summer Landscape</h3>
+            <p class="category">Paintings</p>
+            <p class="description">Oil on canvas, depicting a vibrant summer scene</p>
+            <div class="artwork-meta">
+              <span>2024-03-15</span>
+              <div>
+                <span>❤️ 24</span>
+                <span>💬 8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="artwork-card">
+          <div class="artwork-image">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21" alt="Digital Portrait">
+          </div>
+          <div class="artwork-info">
+            <h3>Digital Portrait</h3>
+            <p class="category">Digital Art</p>
+            <p class="description">Digital illustration created in Procreate</p>
+            <div class="artwork-meta">
+              <span>2024-03-10</span>
+              <div>
+                <span>❤️ 45</span>
+                <span>💬 12</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="artwork-card">
+          <div class="artwork-image">
+            <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716" alt="Urban Sketches">
+          </div>
+          <div class="artwork-info">
+            <h3>Urban Sketches</h3>
+            <p class="category">Sketches</p>
+            <p class="description">Quick pen sketches of city life</p>
+            <div class="artwork-meta">
+              <span>2024-03-05</span>
+              <div>
+                <span>❤️ 32</span>
+                <span>💬 6</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload Artwork Dialog -->
+      <div id="uploadDialog" class="upload-dialog">
+        <div class="dialog-content">
+          <h2>Upload New Artwork</h2>
+          <form onsubmit="submitArtwork(event)">
+            <label>Title</label>
+            <input type="text" required placeholder="Enter artwork title">
+
+            <label>Category</label>
+            <input type="text" required placeholder="E.g., Painting, Digital Art, etc.">
+
+            <label>Description</label>
+            <textarea required placeholder="Describe your artwork..."></textarea>
+
+            <label>Artwork Image</label>
+            <input type="file" accept="image/*" required>
+
+            <button type="submit" class="upload-button">Upload Artwork</button>
+            <button type="button" class="cancel-button" onclick="closeUploadDialog()">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
