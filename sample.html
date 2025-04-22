@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typed.js Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Styling the typed text container */
+    #typed-text {
+      display: inline-block;
+      font-size: 1.5rem; /* Adjust to match the design */
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Smooth cursor styling */
+    .typed-cursor {
+      font-size: 1.5rem;  /* Same size as the text */
+      color: #000;  /* Cursor color */
+      animation: blink 0.7s step-end infinite; /* Smooth blinking effect */
+    }
+
+    /* Animation for the blinking cursor */
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Welcome to the Art<br>Community</h1>
+    <p id="typed-text"></p>
+
+    <div class="hero-buttons">
+      <button id="cta-btn">JOIN NOW</button>
+    </div>
+  </section>
+
+  <script>
+    var options = {
+      strings: [
+        "Share your Paintings, Poetry, and Stories with the World",
+        "Discover new artists and creatives every day.",
+        "Join a community of passionate creators.",
+        "Express yourself through art, words, and more."
+      ],
+      typeSpeed: 50,  // Speed of typing (in milliseconds)
+      backSpeed: 25,  // Speed of backspacing (in milliseconds)
+      backDelay: 1000,  // Delay before starting to backspace (in milliseconds)
+      loop: true,  // Whether the animation should repeat
+      cursorChar: "|",  // The cursor symbol
+      fadeOut: false,  // Ensure the cursor doesn't fade out
+      showCursor: true,  // Show the cursor continuously
+      loopCount: Infinity  // Ensures the animation loops infinitely
+    };
+
+    var typed = new Typed("#typed-text", options);
+  </script>
+</body>
+</html>

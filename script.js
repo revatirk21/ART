@@ -115,3 +115,38 @@ loginBtn.addEventListener('click', (event) => {
       });
     });
   });
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.querySelector(".modal");
+    const closeBtn = document.querySelector(".close-btn");
+
+    // Check if modal was already shown
+    if (!localStorage.getItem("modalShown")) {
+      modal.style.display = "flex"; // Show modal
+      localStorage.setItem("modalShown", "true");
+    } else {
+      modal.style.display = "none"; // Hide modal if already shown
+    }
+
+    // Close modal on button click
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  });
+  var options = {
+    strings: [
+      "Share your Paintings, Poetry, and Stories with the World",
+      "Discover new artists and creatives every day.",
+      "Join a community of passionate creators.",
+      "Express yourself through art, words, and more."
+    ],
+    typeSpeed: 50,  // Speed of typing (in milliseconds)
+    backSpeed: 25,  // Speed of backspacing (in milliseconds)
+    backDelay: 1000,  // Delay before starting to backspace (in milliseconds)
+    loop: true,  // Whether the animation should repeat
+    cursorChar: "|",  // The cursor symbol
+    fadeOut: false,  // Ensure the cursor doesn't fade out
+    showCursor: true,  // Show the cursor continuously
+    loopCount: Infinity  // Ensures the animation loops infinitely
+  };
+
+  var typed = new Typed("#typed-text", options);
