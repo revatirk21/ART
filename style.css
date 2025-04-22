@@ -13,17 +13,17 @@
     min-height: 200vh;
   }
   
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+  }
+  
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 3rem;
-  }
-  
-  .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 900;
   }
   
   .nav-links {
@@ -37,11 +37,7 @@
     text-decoration: none;
     font-size: 1.1rem;
   }
-  
-  .nav-links a:hover {
-    border-bottom: #0bd8ef 2px solid;
-
-  }
+   
 
   .hero {
     text-align: center;
@@ -951,3 +947,22 @@ label {
 
 
 
+#typed-text {
+  display: inline-block;
+  font-size: 1.5rem; /* Adjust to match the design */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Smooth cursor styling */
+.typed-cursor {
+  font-size: 1.5rem;  /* Same size as the text */
+  color: #000;  /* Cursor color */
+  animation: blink 0.7s step-end infinite; /* Smooth blinking effect */
+}
+
+/* Animation for the blinking cursor */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

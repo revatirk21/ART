@@ -173,6 +173,51 @@
     .add-feedback-form button:hover {
       background-color: #252e3b;
     }
+
+    /* Sidebar Styling (Imported from Dashboard) */
+.sidebar {
+  width: 250px;
+  background-color: #1c2541;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-header {
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00bfa6;
+}
+
+.sidebar-nav .nav-button {
+  width: 100%;
+  background: none;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s ease-in-out;
+  border-radius: 6px;
+}
+
+.sidebar-nav .nav-button:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.sidebar-nav .active {
+  background: rgba(0, 255, 255, 0.3);
+}
+
+.sidebar-nav .logout:hover {
+  background: rgba(255, 0, 0, 0.2);
+}
+
   </style>
 </head>
 <body>
@@ -184,14 +229,15 @@
         <h2>Art Community</h2>
       </div>
       <nav class="sidebar-nav">
-        <button class="nav-button" onclick="location.href='dashboard.html'">Dashboard</button>
-        <button class="nav-button" onclick="location.href='my-artworks.html'">My Artworks</button>
-        <button class="nav-button" onclick="location.href='favorites.html'">Favorites</button>
-        <button class="nav-button" onclick="location.href='tutorials.html'">Tutorials</button>
-        <button class="nav-button" onclick="location.href='badges.html'">Badges</button>
-        <button class="nav-button active">Feedback</button>
-        <button class="nav-button logout" onclick="logout()">Logout</button>
-      </nav>
+        <nav class="sidebar-nav">
+          <button class="nav-button" onclick="location.href='profile.html'">Dashboard</button>
+          <button class="nav-button" onclick="location.href='myartworks.html'">My Artworks</button>
+          <button class="nav-button" onclick="location.href='contest.html'">Contests</button>
+          <button class="nav-button" onclick="location.href='tutorial.html'">Tutorials</button>
+          
+          <button class="nav-button" onclick="location.href='testimonials.html'">Testimonials</button>
+          <button class="nav-button logout" onclick="window.location.href='index.html'">Logout</button>
+        </nav>
     </aside>
 
     <!-- Main Content -->
