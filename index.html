@@ -60,14 +60,24 @@
     </div>
   </nav>
 
-  <section class="hero">
-    <h1>Welcome to the Art<br>Community</h1>
-    <p id="typed-text">Share your Paintings, Poetry, and Stories with the World</p>
-
-    <div class="hero-buttons">
-      <button id="cta-btn">JOIN NOW</button> 
+  <section class="hero text-center p-8 relative">
+    <!-- Glowing circle behind the heading -->
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[70%] w-[580px] h-72 bg-sky-400 opacity-30 rounded-full blur-3xl z-0"></div>
+  
+    <h1 class="relative z-10 text-4xl md:text-6xl font-bold text-white">
+      Welcome to the Art<br>Community
+    </h1>
+    <p id="typed-text" class="relative z-10 mt-4 text-xl text-white">
+      Share your Paintings, Poetry, and Stories with the World
+    </p>
+  
+    <div class="hero-buttons mt-6 relative z-10">
+      <button id="cta-btn" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-6 rounded shadow-lg transition">
+        JOIN NOW
+      </button> 
     </div>
   </section>
+  
 
   <section class="express-section" id="express-section">
     <h2>Express Yourself</h2>
