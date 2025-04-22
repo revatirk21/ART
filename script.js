@@ -83,6 +83,13 @@ closeBtn.addEventListener('click', () => {
 
 });
 
+// Handle Login button click (redirect to admin page)
+loginBtn.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent form submission if any
+  window.location.href = 'admin.html'; // Redirect to admin page
+});
+
+
   
   document.addEventListener('DOMContentLoaded', function() {
     
